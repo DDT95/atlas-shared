@@ -1,0 +1,109 @@
+/*!
+ * Atlas territorial 95 — styles de la barre de navigation partagée.
+ * À charger avant le CSS propre du site (les règles du site restent prioritaires
+ * sur son propre contenu, .atlas-nav est un bandeau indépendant en haut de page).
+ */
+:root {
+  --atlas-nav-h: 44px;
+  --atlas-blue: #000091;
+  --atlas-deep: #070047;
+}
+.atlas-nav {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--atlas-nav-h);
+  padding: 0 16px;
+  background: var(--atlas-deep);
+  color: #fff;
+  font-family: Marianne, Arial, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 10px rgba(7, 0, 71, 0.25);
+}
+body.has-atlas-nav {
+  padding-top: 0;
+}
+.atlas-nav-home {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  opacity: 0.92;
+}
+.atlas-nav-home:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.atlas-nav-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.atlas-nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+.atlas-nav-caret {
+  font-size: 10px;
+  transition: transform 0.15s;
+}
+.atlas-nav.is-open .atlas-nav-caret {
+  transform: rotate(180deg);
+}
+.atlas-nav-menu {
+  position: absolute;
+  top: var(--atlas-nav-h);
+  right: 16px;
+  display: none;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 2px;
+  max-width: calc(100vw - 32px);
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--atlas-deep);
+  box-shadow: 0 20px 55px rgba(7, 0, 71, 0.28);
+}
+.atlas-nav.is-open .atlas-nav-menu {
+  display: grid;
+}
+.atlas-nav-menu a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #1f2430;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.atlas-nav-menu a:hover {
+  background: #eef0ff;
+  color: var(--atlas-blue);
+}
+.atlas-nav-menu a.is-current {
+  background: var(--atlas-blue);
+  color: #fff;
+}
+@media (max-width: 640px) {
+  .atlas-nav-home span:last-child {
+    display: none;
+  }
+  .atlas-nav-menu {
+    grid-template-columns: 1fr;
+    right: 8px;
+    left: 8px;
+  }
+}
