@@ -9,8 +9,10 @@
   --atlas-deep: #070047;
 }
 .atlas-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -23,8 +25,12 @@
   font-size: 13px;
   box-shadow: 0 2px 10px rgba(7, 0, 71, 0.25);
 }
+/* Fixed nav is taken out of flow: reserve its height via border-box padding
+   so pages built on rigid height:100% layouts shrink to fit instead of
+   overflowing underneath the bar. */
 body.has-atlas-nav {
-  padding-top: 0;
+  box-sizing: border-box;
+  padding-top: var(--atlas-nav-h);
 }
 .atlas-nav-home {
   display: flex;
