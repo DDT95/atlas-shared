@@ -28,6 +28,7 @@
     { slug: "chaleur-refuges-95", title: "Chaleur & refuges" },
     { slug: "val-doise-nuisances", title: "Nuisances" },
     { slug: "projets-transformations-95", title: "Projets & transformations" },
+    { slug: "inspiration-valdoise-95", title: "Inspiration val-d’oisienne" },
   ];
 
   var CURRENT_SLUG = (function () {
