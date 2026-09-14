@@ -17,6 +17,7 @@
     { slug: "observatoire_bati", title: "Logement & habitat (observatoire)" },
     { slug: "biodiversite95", title: "Biodiversité" },
     { slug: "transport95", title: "Mobilités & transports" },
+    { slug: "carte_carburant_95", title: "Prix du carburant" },
     { slug: "transition-energetique95", title: "Transition énergétique" },
     { slug: "val-doise-domicile-travail", title: "Domicile-travail" },
     { slug: "val-doise-sol-formes-urbaines", title: "Sol & formes urbaines" },
